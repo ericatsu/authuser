@@ -1,3 +1,5 @@
+//Logic
+
 package com.ericatsu.authuser.registration;
 
 public class RegistrationService {

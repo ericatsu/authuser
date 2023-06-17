@@ -1,3 +1,5 @@
+//data class used for capturing user registration information.
+
 package com.ericatsu.authuser.registration;
 
 import lombok.AllArgsConstructor;

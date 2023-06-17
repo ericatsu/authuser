@@ -1,3 +1,5 @@
+//handles the registration API endpoint for user registration.
+
 package com.ericatsu.authuser.registration;
 
 import org.springframework.web.bind.annotation.RequestBody;
