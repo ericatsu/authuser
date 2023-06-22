@@ -1,19 +1,10 @@
-//data class used for capturing user registration information.
-
 package com.ericatsu.authuser.registration;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
 
-@Getter
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class RegistrationRequest {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+public record RegistrationRequest( String firstName,
+     String lastname,
+     String password,
+     String email,
+     String role) {
+
 }
