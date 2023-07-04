@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.ericatsu.authuser.exception.UserAlreadyExistsException;
 import com.ericatsu.authuser.registration.RegistrationRequest;
+import com.ericatsu.authuser.registration.token.VerificationToken;
+import com.ericatsu.authuser.registration.token.VerificationTokenRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +19,7 @@ public class UserService implements IUserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final VerificationTokenRepository tokenRepository;
 
     @Override
     public Optional<User> findByEmail(String email) {
@@ -40,6 +43,12 @@ public class UserService implements IUserService {
         newUser.setEmail(request.email());
         newUser.setPassword(passwordEncoder.encode(request.password()));
         return userRepository.save(newUser);
+    }
+
+    @Override
+    public void saveUserVerificationToken(User theUser, String token) {
+        var verificationToken = new VerificationToken(token, theUser);
+        tokenRepository.save(verificationToken);
     }
     
 }
