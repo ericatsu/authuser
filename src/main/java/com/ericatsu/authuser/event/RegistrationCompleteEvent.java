@@ -17,5 +17,4 @@ public class RegistrationCompleteEvent extends ApplicationEvent {
         this.user = user;
         this.applicationUrl = applicationUrl;
     }
-    
 }
