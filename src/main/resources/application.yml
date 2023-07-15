@@ -6,7 +6,7 @@ server:
 
 spring:
   datasource:
-    password: admin
+    password:
     url: jdbc:mysql://localhost:3306/registration_db
     username: root
   jpa:
