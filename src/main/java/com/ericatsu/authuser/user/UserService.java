@@ -1,5 +1,6 @@
 package com.ericatsu.authuser.user;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,5 +51,24 @@ public class UserService implements IUserService {
         var verificationToken = new VerificationToken(token, theUser);
         tokenRepository.save(verificationToken);
     }
+
+    @Override
+    public String validateToken(String theToken) {
+        VerificationToken token = tokenRepository.findByToken(theToken);
+        if (token == null) {
+            return "Invalid verification token";
+        }
+        User user = token.getUser();
+        Calendar calendar = Calendar.getInstance();
+        if ((token.getExpirationTime().getTime() - calendar.getTime().getTime()) <= 0) {
+            tokenRepository.delete(token);
+            return "Token already expired";
+        }
+        user.setEnabled(true);
+        userRepository.save(user);
+        return "valid";
+    }
+
+    
     
 }

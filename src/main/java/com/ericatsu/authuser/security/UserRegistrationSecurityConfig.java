@@ -19,17 +19,17 @@ public class UserRegistrationSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // 1:40:42
+    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.cors(withDefaults())
         .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests()
-                .requestMatchers("/register")
+                .requestMatchers("/register/**")
                 .permitAll()
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/users")
+                .requestMatchers("/users/**")
                 .hasAnyAuthority("USER", "ADMIN")
                 .and()
                 .formLogin()
