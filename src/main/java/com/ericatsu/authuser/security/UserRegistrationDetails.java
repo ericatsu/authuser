@@ -2,6 +2,7 @@ package com.ericatsu.authuser.security;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,8 +26,13 @@ public class UserRegistrationDetails implements UserDetails {
         this.userName = user.getEmail();
         this.password = user.getPassword();
         this.isEnabled = user.isEnabled();
-        this.authorities = Arrays.stream(user.getRole().split(",")).map(SimpleGrantedAuthority::new)
+        if (user.getRole() != null) {
+            this.authorities = Arrays.stream(user.getRole().split(","))
+                .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
+        } else {
+            this.authorities = Collections.emptyList();
+        }
     }
 
     @Override

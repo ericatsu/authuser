@@ -1,6 +1,5 @@
 package com.ericatsu.authuser.security;
 
-import org.hibernate.jdbc.Expectations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,15 +24,15 @@ public class UserRegistrationSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.cors(withDefaults())
         .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequest()
+                .authorizeHttpRequests()
                 .requestMatchers("/register")
                 .permitAll()
                 .and()
-                .authorizeHttpRequest()
+                .authorizeHttpRequests()
                 .requestMatchers("/users")
                 .hasAnyAuthority("USER", "ADMIN")
                 .and()
-                .fromLogin()
+                .formLogin()
                 .and()
                 .build();
     }
