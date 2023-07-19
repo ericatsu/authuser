@@ -1,10 +1,11 @@
-# User Authentication and Email Expiration 
+# User Authentication and Email Expiration Application
 
 ## AuthUser
 
 AuthUser is a Spring Boot application that provides user registration and verification functionalities. It allows users to register, receive verification tokens via email, and activate their accounts to gain access to the application.
 
 ### Prerequisites
+
 Before running the AuthUser application, ensure you have the following prerequisites installed on your system:
 
 - Java 8 or higher
@@ -21,8 +22,8 @@ Before running the AuthUser application, ensure you have the following prerequis
 
 2. cd AuthUser
    $ cd authuser
-   
-Database
+
+#### Database
 
  $ cd C:\Program Files\MySQL\MySQL Server 8.0\bin
  $ mysql -u root -p
@@ -37,8 +38,9 @@ Database
 - User List Endpoint: Provides an API endpoint to fetch a list of all registered users.
   
 ## Contact
+
 For any inquiries or issues related to the AuthUser application, please contact:
 
-Email: ericatsu29@gmail.com
-Twitter: https://twitter.com/ericKAatsu
-LinkedIn: [LinkedIn](https://www.linkedin.com/in/eric-atsu-4065681b4/)
+Email: <ericatsu29@gmail.com>
+Twitter: <https://twitter.com/ericKAatsu>
+LinkedIn: <https://www.linkedin.com/in/eric-atsu-4065681b4/>
