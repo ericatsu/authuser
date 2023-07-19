@@ -67,8 +67,5 @@ public class UserService implements IUserService {
         user.setEnabled(true);
         userRepository.save(user);
         return "valid";
-    }
-
-    
-    
+    }    
 }

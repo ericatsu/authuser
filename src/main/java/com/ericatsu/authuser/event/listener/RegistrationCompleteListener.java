@@ -50,7 +50,7 @@ public class RegistrationCompleteListener implements ApplicationListener<Registr
                 "<p>Thank you for registering with us,"+"" +
                 "Please, follow the link below to complete your registration.</p>"+
                 "<a href=\"" +url+ "\">Verify your email to activate your account</a>"+
-                "<p> Thank you <br> Users Registration Portal Service";
+                "<p> Thank you <br> AuthUser Portal Service";
         MimeMessage message = mailSender.createMimeMessage();
         var messageHelper = new MimeMessageHelper(message);
         messageHelper.setFrom("ericatsu29@gmail.com", senderName);
