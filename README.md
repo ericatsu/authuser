@@ -25,9 +25,9 @@ Before running the AuthUser application, ensure you have the following prerequis
 
 #### Database
 
- $ cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+ << $ cd C:\Program Files\MySQL\MySQL Server 8.0\bin
  $ mysql -u root -p
- $ create database registration_db;
+ $ create database registration_db;  >>
 
 ## Features
 
@@ -41,6 +41,6 @@ Before running the AuthUser application, ensure you have the following prerequis
 
 For any inquiries or issues related to the AuthUser application, please contact:
 
-Email: <ericatsu29@gmail.com>
-Twitter: <https://twitter.com/ericKAatsu>
-LinkedIn: <https://www.linkedin.com/in/eric-atsu-4065681b4/>
+- Email: <ericatsu29@gmail.com>
+- Twitter: <https://twitter.com/ericKAatsu>
+- LinkedIn: <https://www.linkedin.com/in/eric-atsu-4065681b4/>
